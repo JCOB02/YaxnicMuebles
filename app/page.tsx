@@ -110,12 +110,12 @@ export default function Home() {
               {services.slice(0, 3).map((service, index) => (
                 <Card
                   key={service.title}
-                  className="text-center shadow-lg border-none rounded-sm bg-gray-light hover:scale-105 scroll-animate"
+                  className="text-center shadow-lg border-none rounded-lg bg-gray-light hover:scale-105 max-w-md scroll-animate"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <CardContent className="p-8">
                     <div className="flex justify-center mb-6">{service.icon}</div>
-                    <h3 className="text-2xl font-display font-semibold mb-4 text-gray-dark">
+                    <h3 className="text-xl font-display font-semibold mb-4 text-gray-dark">
                       {service.title}
                     </h3>
                     <p className="text-gray-medium">{service.description}</p>
@@ -129,12 +129,12 @@ export default function Home() {
               {services.slice(3).map((service, index) => (
                 <Card
                   key={service.title}
-                  className="text-center border-none rounded-sm shadow-lg hover:scale-105 scroll-animate"
+                  className="text-center border-none rounded-lg shadow-lg hover:scale-105 max-w-md scroll-animate"
                   style={{ animationDelay: `${(index + 3) * 0.2}s` }}
                 >
                   <CardContent className="p-8">
                     <div className="flex justify-center mb-6">{service.icon}</div>
-                    <h3 className="text-2xl font-display font-semibold mb-4 text-foreground">
+                    <h3 className="text-xl font-display font-semibold mb-4 text-foreground">
                       {service.title}
                     </h3>
                     <p className="text-muted-foreground">{service.description}</p>

@@ -63,10 +63,10 @@ export default function ProyectosPage({params}: { params: { categoria: string } 
                         {/* Elemento superior */}
                         <Grid container spacing={2} size={12}>
                             <Grid size={6}>
-                                <img src={p.imagenes[1]} alt="Proyecto Starbooks" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                                <img src={p.imagenes[1]} alt="Proyecto Starbooks" style={{ width: "100%", height: "60vh", objectFit: "cover" }} />
                             </Grid>
                             <Grid size={6}>
-                                <img src={p.imagenes[2]} alt="Proyecto Starbooks" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                                <img src={p.imagenes[2]} alt="Proyecto Starbooks" style={{ width: "100%", height: "60vh", objectFit: "cover" }} />
                             </Grid>
                         </Grid>
                     </Grid>

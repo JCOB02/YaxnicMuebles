@@ -18,7 +18,7 @@ const HeroSection = () => {
       
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-        <h1 className="text-5xl text-gray-light text-pretty md:text-7xl font-display font-semibold mb-6">
+        <h1 className="text-5xl text-gray-light md:text-7xl mb-6">
           Muebles con alma de madera
         </h1>
         <p className="text-xl text-white md:text-2xl font-light mb-8 fade-in opacity-90 max-w-2xl mx-auto">
