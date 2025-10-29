@@ -11,9 +11,6 @@ import { PiHouse } from "react-icons/pi";
 import AnimateOnScroll from "./components/AnimateOnScroll";
 import ScrollToTop from "./components/ScrollToTop";
 
-
-export default function Home() {
-
   const services = [
     {
       icon: <Hammer className="h-8 w-8 text-gray-dark " />,
@@ -42,11 +39,11 @@ export default function Home() {
     }
   ];
 
-  const featuredProducts = [
+  const featuredProyects = [
     {
       title: "Starbucks Mérida Altabrisa",
       description: "Mesas y sillas que transforman cada comida en una experiencia especial",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      image: "/starbooksProject.webp"
     },
     {
       title: "Salas de Estar",
@@ -82,6 +79,10 @@ export default function Home() {
       description: "Llevamos y instalamos tus muebles con el máximo cuidado"
     }
   ];
+
+
+export default function Home() {
+
 
 
   return (
@@ -161,13 +162,14 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {featuredProducts.map((product, index) => (
+            {featuredProyects.map((product, index) => (
               <Card key={product.title} className="overflow-hidden border-none rounded-sm shadow-lg scroll-animate hover:transform hover:scale-105" style={{ animationDelay: `${index * 0.2}s` }}>
                 <div className="relative">
                   <img
                     src={product.image}
                     alt={product.title}
                     className="w-full h-48 object-cover"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>

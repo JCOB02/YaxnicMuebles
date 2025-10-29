@@ -7,6 +7,7 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 });
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={` ${geistMono.variable} antialiased`}
       >

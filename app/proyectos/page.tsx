@@ -46,7 +46,7 @@ export default function Projects() {
       project: "Departamento Premium",
       comment: "Transformaron completamente nuestro espacio. Muebles hermosos y funcionales.",
       rating: 5
-    }
+    } 
   ];
 
   const services = [

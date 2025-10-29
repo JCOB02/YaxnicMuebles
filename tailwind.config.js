@@ -1,3 +1,5 @@
+import { title } from 'process';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
@@ -27,7 +29,11 @@ export default {
     				'Geist',
     				'Montserrat',
     				'sans-serif'
-    			]
+    			],
+				title: [
+					'Montserrat',
+					'sans-serif'
+				]
     		},
     		colors: {
     			border: 'hsl(var(--border))',
