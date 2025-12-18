@@ -57,10 +57,10 @@ const ProjectsSection = () => {
     <section id="proyectos" className="py-20 bg-gradient-to-t from-gray-medium/90 from-10% via-gray-600 via-20% to-gray-light/50 to-100% ">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-gray-dark">
+          <h2 className="text-4xl md:text-6xl font-title font-light mb-4 text-gray-dark">
             Proyectos Realizados
           </h2>
-          <p className="text-xl text-brown-dark max-w-2xl mx-auto">
+          <p className="text-xl text-gray-dark max-w-2xl mx-auto">
             Colaboraciones y espacios amueblados con nuestro estilo único y personalizado
           </p>
         </div>

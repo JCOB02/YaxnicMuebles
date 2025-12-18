@@ -5,7 +5,7 @@ import ContactSection from "../components/ContactSection";
 import AnimateOnScroll from "../components/AnimateOnScroll";
 import ScrollToTop from "../components/ScrollToTop";
 import { Card, CardContent } from "../components/ui/card";
-import { Clock, Phone, Mail, MapPin, MessageCircle, Calendar } from "lucide-react";
+import { Clock, Phone, Mail, MapPin, MessageCircle, Calendar, Car } from "lucide-react";
 
 export default function Contact() {
   const contactMethods = [
@@ -95,7 +95,7 @@ export default function Contact() {
         {/* Hero Section */}
         <section className="py-20 bg-gray-dark">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-5xl md:text-6xl font-display font-bold mb-6 text-gray-light scroll-animate">
+            <h1 className="text-5xl md:text-6xl font-title font-light mb-6 text-gray-light scroll-animate">
               Contáctanos
             </h1>
             <p className="text-xl text-gray-light max-w-3xl mx-auto scroll-animate">
@@ -104,6 +104,10 @@ export default function Contact() {
             </p>
           </div>
         </section>
+
+        {/* Main Contact Section */}
+        <ContactSection />
+
 
         {/* Contact Methods */}
         <section className="py-20 bg-gray-light">
@@ -120,7 +124,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {contactMethods.map((method, index) => (
                 <Card key={method.title} className="bg-gray-dark text-center border-none rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-400 cursor-pointer scroll-animate" style={{ animationDelay: `${index * 0.2}s` }}>
-                  <CardContent className="p-8">
+                  <CardContent className="p-8 flex flex-col h-full">
                     <div className="flex justify-center mb-6">
                       {method.icon}
                     </div>
@@ -135,7 +139,7 @@ export default function Contact() {
                     </p>
                     <a 
                       href={method.action}
-                      className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-lg font-medium transition-colors"
+                      className="inline-block mt-auto bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-lg font-medium transition-colors"
                     >
                       Contactar
                     </a>
@@ -169,8 +173,7 @@ export default function Contact() {
           </div>
         </section>
 
-        {/* Main Contact Section */}
-        <ContactSection />
+
 
         {/* FAQ Section */}
         <section className="py-20 bg-background">

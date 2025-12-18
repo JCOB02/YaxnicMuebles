@@ -78,10 +78,10 @@ export default function Projects() {
         {/* Hero Section */}
         <section className="py-20 bg-white">
             <div className="container mx-auto px-4 text-center">
-            <h1 className="text-5xl md:text-6xl font-display font-bold mb-6 text-gray-dark scroll-animate">
+            <h1 className="text-4xl md:text-6xl font-title font-ligth mb-6 text-gray-dark scroll-animate">
                 Nuestros Proyectos
             </h1>
-            <p className="text-xl text-brown-dark max-w-3xl mx-auto scroll-animate">
+            <p className="text-xl text-gray-dark max-w-3xl mx-auto scroll-animate">
                 Cada proyecto es una historia única. Descubre cómo hemos transformado espacios 
                 y creado ambientes excepcionales para nuestros clientes.
             </p>
@@ -127,7 +127,7 @@ export default function Projects() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={testimonial.name} className="text-center bg-gray-dark rounded-lg border-none shadow-lg scroll-animate" style={{ animationDelay: `${index * 0.2}s` }}>
+              <Card key={testimonial.name} className="text-center bg-gray-dark rounded-lg border-none shadow-lg hover:transform hover:scale-105 scroll-animate" style={{ animationDelay: `${index * 0.2}s` }}>
                 <CardContent className="p-7 flex flex-col justify-between h-full">
                   <div className="flex justify-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (

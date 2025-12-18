@@ -5,12 +5,11 @@ const HeroSection = () => {
   return (
     <section 
       id="inicio" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden md:bg-fixed"
       style={{
         backgroundImage: `url('/starbooksProject.webp')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
       }}
     >
       {/* Overlay */}

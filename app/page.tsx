@@ -10,6 +10,7 @@ import { TfiRulerAlt2 } from "react-icons/tfi";
 import { PiHouse } from "react-icons/pi";
 import AnimateOnScroll from "./components/AnimateOnScroll";
 import ScrollToTop from "./components/ScrollToTop";
+import Image from "next/image";
 
   const services = [
     {
@@ -42,16 +43,19 @@ import ScrollToTop from "./components/ScrollToTop";
   const featuredProyects = [
     {
       title: "Starbucks Mérida Altabrisa",
+      category: "comerciales",
       description: "Mesas y sillas que transforman cada comida en una experiencia especial",
       image: "/starbooksProject.webp"
     },
     {
       title: "Salas de Estar",
+      category: "puertas",
       description: "Sofás y muebles de sala diseñados para el confort y la elegancia",
       image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
       title: "Dormitorios Únicos",
+      category: "recamaras",
       description: "Camas, cómodas y armarios que crean espacios de descanso perfectos",
       image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     }
@@ -97,7 +101,7 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-r from-gray-950 from-1% via-gray-900 via-5% to-gray-dark">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 scroll-animate">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-gray-light">
+            <h2 className="text-4xl md:text-6xl font-title font-light mb-4 text-gray-light">
               Nuestros Servicios
             </h2>
             <p className="text-xl text-gray-light max-w-2xl mx-auto">
@@ -150,10 +154,10 @@ export default function Home() {
       </section>
 
       {/* Featured Products Section */}
-      <section className="py-20 bg-gradient-to-r from-gray-medium/30 from-10% to-gray-light shadow-md">
+      <section className="py-10 bg-gradient-to-r from-gray-medium/30 from-10% to-gray-light shadow-md">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 scroll-animate">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-gray-dark">
+            <h2 className="text-4xl md:text-6xl font-title font-light mb-4 text-gray-dark">
               Trabajos Realizados
             </h2>
             <p className="text-xl text-gray-medium max-w-2xl mx-auto">
@@ -163,18 +167,20 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {featuredProyects.map((product, index) => (
-              <Card key={product.title} className="overflow-hidden border-none rounded-sm shadow-lg scroll-animate hover:transform hover:scale-105" style={{ animationDelay: `${index * 0.2}s` }}>
-                <div className="relative">
-                  <img
+              <Link href={`/proyectos/${product.category}`} key={product.title}>
+              <Card key={product.title} className="overflow-hidden border-none rounded-lg shadow-lg scroll-animate hover:transform hover:scale-105" style={{ animationDelay: `${index * 0.2}s` }}>
+                <div className="relative w-full h-48">
+                  <Image
                     src={product.image}
                     alt={product.title}
-                    className="w-full h-48 object-cover"
+                    fill
+                    className="object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <CardContent className="p-6 bg-gray-dark">
-                  <h3 className="text-2xl font-display font-semibold mb-3 text-gray-light/60">
+                  <h3 className="text-2xl font-display font-semibold mb-3 text-white">
                     {product.title}
                   </h3>
                   <p className="text-gray-light mb-4">
@@ -182,6 +188,7 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
+              </Link>
             ))}
           </div>
 
@@ -197,10 +204,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-t from-gray-dark from 20% to-gray-dark/90">
+      <section className="py-10 bg-gradient-to-t from-gray-dark from 20% to-gray-dark/90">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 scroll-animate">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-gray-light">
+            <h2 className="text-4xl md:text-6xl font-title font-light mb-4 text-gray-light">
               Nuestro Proceso
             </h2>
             <p className="text-xl text-gray-light/70 max-w-2xl mx-auto">
@@ -233,7 +240,7 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-t from-gray-light/50 from-20% to-gray-dark/30 text-foreground shadow-lg">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto scroll-animate">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-gray-dark">
+            <h2 className="text-4xl md:text-6xl font-title font-light mb-4 text-gray-dark">
               ¿Listo para crear tu espacio ideal?
             </h2>
             <p className="text-xl py-5 text-gray-dark max-w-2xl mx-auto">

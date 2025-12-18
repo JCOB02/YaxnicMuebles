@@ -18,12 +18,12 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-black/30 backdrop-blur-xl z-50 shadow-md">
+    <header className="fixed top-0 w-full bg-gray-dark/70 backdrop-blur-xl z-50 shadow-md">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-            <h1 className="text-xl md:text-2xl text-white font-display font-bold">
+            <h1 className="text-xl md:text-2xl text-white font-title font-900">
               Yaxnic Muebles
             </h1>
           </Link>
@@ -57,7 +57,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="text-white md:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <Menu className="h-6 w-6" />
@@ -72,7 +72,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-foreground hover:text-primary transition-colors duration-200 font-medium ${
+                  className={`text-white hover:text-primary transition-colors duration-200 font-medium ${
                     location.pathname === item.href ? 'text-primary' : ''
                   }`}
                   onClick={() => setIsMenuOpen(false)}

@@ -3,8 +3,16 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
-import { Contact, Home, User } from "lucide-react";
+import Image from "next/image";
 import { useToast } from "../hooks/use-toast";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -14,6 +22,13 @@ export default function ContactSection() {
   });
   const { toast } = useToast();
 
+  const images = [
+    '/yaxnicMuebles/puertas/puerta1-3.jpg',
+    '/yaxnicMuebles/closets_y_vestidores/c_y_v1-1.jpg',
+    '/yaxnicMuebles/muebles_de_exterior/me1-1.jpg',]
+
+  const [isSending, setIsSending] = useState(false);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -22,74 +37,55 @@ export default function ContactSection() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    
-    toast({
-      title: "¡Mensaje enviado!",
-      description: "Nos pondremos en contacto contigo pronto.",
+    setIsSending(true);
+    try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
     });
+
+    if (res.ok) {
+      toast({
+        title: "¡Mensaje enviado!",
+        description: "Nos pondremos en contacto contigo pronto.",
+        variant: "success",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      toast({
+        title: "Error al enviar mensaje",
+        description: "Por favor, intenta de nuevo más tarde.",
+        variant: "destructive",
+      });
+    }
+  } catch (err) {
+    toast({
+      title: "Error",
+      description: "Ocurrió un error al enviar el mensaje.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSending(false); 
+  }
     
-    setFormData({ name: "", email: "", message: "" });
+    
   };
 
   return (
-    <section id="contacto" className="py-20 bg-secondary/30">
+    <section id="contacto" className=" pb-20 bg-gray-dark">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-foreground">
-            Contáctanos
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            ¿Tienes un proyecto en mente? Nos encantaría escuchar tus ideas y ayudarte a hacerlas realidad
-          </p>
-        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact Info */}
-          <div className="lg:col-span-1 space-y-6">
-            <Card className="border-none shadow-lg">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-foreground">
-                  <Contact className="h-6 w-6 text-primary" />
-                  Información de Contacto
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-foreground mb-1">Dirección</h4>
-                  <p className="text-muted-foreground">
-                    Av. Artesanos #123<br />
-                    Col. Industrial<br />
-                    Ciudad de México, CDMX 01234
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-1">Teléfono</h4>
-                  <p className="text-muted-foreground">+52 55 1234 5678</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                  <p className="text-muted-foreground">contacto@yaxnicmuebles.com</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-1">Horarios</h4>
-                  <p className="text-muted-foreground">
-                    Lun - Vie: 9:00 AM - 6:00 PM<br />
-                    Sáb: 9:00 AM - 2:00 PM<br />
-                    Dom: Cerrado
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
 
           {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <Card className="border-none shadow-lg">
+          <div className="lg:col-span-2 h-full">
+            <Card className="border-none shadow-lg rounded-lg h-full">
               <CardHeader>
-                <CardTitle className="text-2xl font-display text-foreground">
+                <CardTitle className="text-4xl font-title font-light text-foreground">
                   Envíanos un mensaje
                 </CardTitle>
               </CardHeader>
@@ -97,7 +93,7 @@ export default function ContactSection() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                      <label htmlFor="name" className="block text-sm md:text-xl font-medium text-foreground mb-2">
                         Nombre completo
                       </label>
                       <Input
@@ -112,7 +108,7 @@ export default function ContactSection() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                      <label htmlFor="email" className="block text-sm md:text-xl font-medium text-foreground mb-2">
                         Correo electrónico
                       </label>
                       <Input
@@ -128,7 +124,7 @@ export default function ContactSection() {
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="message" className="block text-sm md:text-xl font-medium text-foreground mb-2">
                       Mensaje
                     </label>
                     <textarea
@@ -144,13 +140,38 @@ export default function ContactSection() {
                   </div>
                   <Button 
                     type="submit" 
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-3"
+                    className="w-full bg-gray-dark hover:bg-gray-dark/90  rounded-xl text-lg py-3"
+                    disabled={isSending}
                   >
-                    Enviar Mensaje
+                    {isSending ? "Enviando..." : "Enviar Mensaje"}
                   </Button>
                 </form>
               </CardContent>
             </Card>
+          </div>
+
+
+<div className="hidden lg:col-span-1  lg:flex overflow-hidden">
+  <div className="w-full overflow-hidden rounded-lg shadow-md">
+    <Carousel className="relative w-full " opts={{ loop: true }} 
+    plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]}>
+      <CarouselContent className="">
+        {images.map((image, index) => (
+          <CarouselItem key={index} className=" overflow-hidden">
+            <Image
+
+  src={`${image}`}
+  width={350}
+  height={480}
+  alt={`Slide ${index + 1}`}
+  className="w-full lg:h-[500px] object-fill rounded-lg block"
+/>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      
+    </Carousel>
+            </div>
           </div>
         </div>
       </div>
