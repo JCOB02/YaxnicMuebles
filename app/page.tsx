@@ -119,7 +119,7 @@ export default function Home() {
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <CardContent className="p-8">
-                    <div className="flex justify-center mb-6">{service.icon}</div>
+                    <div className="flex justify-center mb-4">{service.icon}</div>
                     <h3 className="text-xl font-display font-semibold mb-4 text-gray-dark">
                       {service.title}
                     </h3>
@@ -138,7 +138,7 @@ export default function Home() {
                   style={{ animationDelay: `${(index + 3) * 0.2}s` }}
                 >
                   <CardContent className="p-8">
-                    <div className="flex justify-center mb-6">{service.icon}</div>
+                    <div className="flex justify-center mb-4">{service.icon}</div>
                     <h3 className="text-xl font-display font-semibold mb-4 text-foreground">
                       {service.title}
                     </h3>

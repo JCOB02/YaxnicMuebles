@@ -5,30 +5,34 @@ import ContactSection from "../components/ContactSection";
 import AnimateOnScroll from "../components/AnimateOnScroll";
 import ScrollToTop from "../components/ScrollToTop";
 import { Card, CardContent } from "../components/ui/card";
-import { Clock, Phone, Mail, MapPin, MessageCircle, Calendar, Car } from "lucide-react";
+import {FaInstagram, FaWhatsapp} from "react-icons/fa";
+import { Clock, Phone, Mail, MapPin, MessageCircle, Calendar } from "lucide-react";
 
 export default function Contact() {
   const contactMethods = [
     {
-      icon: <Phone className="h-8 w-8 text-gold" />,
-      title: "Llámanos",
-      description: "Para consultas inmediatas y asesoría personalizada",
-      detail: "+52 55 1234 5678",
-      action: "tel:+525512345678"
+      icon: <FaInstagram className="h-8 w-8 text-gray-300" />,
+      title: "Instagram",
+      description: "Escríbenos por mensaje directo",
+      detail: "yaxnicmuebles",
+      action: "https://instagram.com/yaxnicmuebles",
+      external: true
     },
     {
-      icon: <Mail className="h-8 w-8 text-gold" />,
+      icon: <Mail className="h-8 w-8 text-gray-300" />,
       title: "Escríbenos",
       description: "Envíanos tu proyecto y te contactaremos pronto",
-      detail: "contacto@yaxnicmuebles.com",
-      action: "mailto:contacto@yaxnicmuebles.com"
+      detail: "yaxnicmuebles@gmail.com",
+      action: "#contacto"
+
     },
     {
-      icon: <MessageCircle className="h-8 w-8 text-gold" />,
+      icon: <FaWhatsapp className="h-8 w-8 text-gray-300" />,
       title: "WhatsApp",
       description: "Chatea con nosotros para respuestas rápidas",
       detail: "+52 55 9876 5432",
-      action: "https://wa.me/525598765432"
+      action: "https://wa.me/525598765432",
+      external: true
     }
   ];
 
@@ -113,10 +117,10 @@ export default function Contact() {
         <section className="py-20 bg-gray-light">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 scroll-animate">
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-foreground">
+              <h2 className="text-4xl md:text-6xl font-title font-light mb-4 text-foreground">
                 Múltiples Formas de Contacto
               </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-xl text-gray-dark max-w-2xl mx-auto">
                 Elige la forma que más te convenga para iniciar tu proyecto
               </p>
             </div>
@@ -139,6 +143,8 @@ export default function Contact() {
                     </p>
                     <a 
                       href={method.action}
+                      target={method.external ? "_blank" : "_self"}
+                      rel={method.external ? "noopener noreferrer" : ""}
                       className="inline-block mt-auto bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-lg font-medium transition-colors"
                     >
                       Contactar

@@ -18,21 +18,21 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="nosotros" className="py-20 wood-gradient">
+    <section id="nosotros" className="py-20 bg-gradient-to-b from-white to-gray-medium/10">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
+            <h2 className="text-4xl md:text-5xl font-title font-light mb-6 text-gray-dark">
               Sobre Nosotros
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg text-gray-medium mb-8 leading-relaxed">
               Con más de 15 años de experiencia en el sector mueblero, Yaxnic Muebles nació 
               del amor por la madera y la pasión por crear espacios únicos. Somos una empresa 
               familiar que combina técnicas artesanales tradicionales con diseños contemporáneos, 
               creando piezas que no solo amueblan, sino que cuentan historias.
             </p>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg text-gray-medium mb-8 leading-relaxed">
               Nuestro compromiso es crear muebles que perduren en el tiempo, tanto por su 
               calidad como por su diseño. Cada proyecto es único y personalizado según las 
               necesidades y estilo de vida de nuestros clientes.
@@ -40,16 +40,16 @@ const AboutSection = () => {
 
             {/* Values */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-display font-semibold text-foreground mb-4">
+              <h3 className="text-3xl font-title font-light text-gray-dark mb-4">
                 Nuestros Valores
               </h3>
               {values.map((value, index) => (
                 <Card key={value.title} className="border-none shadow-md bg-card/80">
                   <CardContent className="p-4">
-                    <h4 className="text-lg font-semibold text-foreground mb-2">
+                    <h4 className="text-lg font-title font-semibold text-gray-dark mb-2">
                       {value.title}
                     </h4>
-                    <p className="text-muted-foreground">
+                    <p className="text-gray-medium">
                       {value.description}
                     </p>
                   </CardContent>

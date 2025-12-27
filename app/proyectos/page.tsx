@@ -78,7 +78,7 @@ export default function Projects() {
         {/* Hero Section */}
         <section className="py-20 bg-white">
             <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-6xl font-title font-ligth mb-6 text-gray-dark scroll-animate">
+            <h1 className="text-4xl md:text-6xl font-title font-light mb-6 text-gray-dark scroll-animate">
                 Nuestros Proyectos
             </h1>
             <p className="text-xl text-gray-dark max-w-3xl mx-auto scroll-animate">

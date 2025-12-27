@@ -86,7 +86,7 @@ const ProjectsSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <CardContent className="p-6 group-hover:bg-gray-medium/50 bg-gray-medium/10 group-hover:text-gray-light text-gray-dark transition-colors duration-300">
-                <h3 className="text-2xl font-display font-semibold mb-2 ">
+                <h3 className="text-2xl font-title  mb-2 ">
                   {category.name}
                 </h3>
                 <p>

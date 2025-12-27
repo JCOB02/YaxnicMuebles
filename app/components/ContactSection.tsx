@@ -76,7 +76,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contacto" className=" pb-20 bg-gray-dark">
+    <section id="contacto" className=" pb-20 bg-gray-dark scroll-mt-24">
       <div className="container mx-auto px-4">
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
