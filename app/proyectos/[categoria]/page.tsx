@@ -31,16 +31,17 @@ const proyectos = [ { id: "1", nombre: "Proyecto Alpha", descripcion: "Descripci
     { id: "63", nombre: "Proyecto Restauracion", descripcion: "Descripción del Proyecto Comercial 2", categoria: "Restauraciones", imagenes: ['/yaxnicMuebles/restauraciones/restauracion4-1.jpg', '/yaxnicMuebles/restauraciones/restauracion4-2.jpg', '/yaxnicMuebles/restauraciones/restauracion4-3.jpg', '/yaxnicMuebles/restauraciones/restauracion4-4.jpg'] },
     ];
 
-export default async function ProyectosPage({
-    params,
-    }: {
-    params: { categoria: string };
-    }) {
+interface Props {
+        params: Promise<{ categoria: string }>;
+    }
+
+export default async function ProyectosPage({ params }: Props) {
     const { categoria } = await params;
 
     const proyecto = proyectos.filter(
         (p) => slugify(p.categoria) === slugify(categoria)
     );
+
 
     if (proyecto.length === 0) {
         return <div className="p-10 text-center">Proyecto no encontrado</div>;
