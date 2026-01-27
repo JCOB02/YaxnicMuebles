@@ -10,13 +10,13 @@ const Footer = () => {
   const socialLinks = [
     { name: "Facebook", href: "https://www.facebook.com/profile.php?id=100064035131640", icon: SiFacebook },
     { name: "Instagram", href: "https://www.instagram.com/yaxnicmuebles?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", icon: SiInstagram },
-    { name: "WhatsApp", href: "https://wa.me/529992395744", icon: SiWhatsapp },
+    { name: "WhatsApp", href: "https://wa.me/529993474481", icon: SiWhatsapp },
   ];
 
   return (
     <footer className="bg-gray-dark text-gray-200 py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center space-x-2 mb-4 hover:opacity-80 transition-opacity">
@@ -74,8 +74,9 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contacto</h4>
             <div className="space-y-2 text-gray-light">
-              <p className="flex items-center gap-2"><Mail className="text-gray-400 " /> yaxnicmuebles@gmail.com</p>
-
+              <p className="flex items-center gap-4 pt-4"><Mail className="text-gray-400 text-xl md:text-2xl" /> yaxnicmuebles@gmail.com</p>
+              <p className="flex items-center gap-4 pt-4"><SiWhatsapp className="text-gray-400 text-xl md:text-2xl" />999-347-4481</p> 
+              
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import HeroSection from "./components/HeroSection";
 import Footer from "./components/Footer";
 import { Card, CardContent } from "./components/ui/card";
 import Link from "next/link";
-import { Hammer, Truck, Star, ArrowRight } from "lucide-react";
+import { Hammer, Truck, Star, ArrowRight, Paintbrush } from "lucide-react";
 import { RiToolsFill } from "react-icons/ri";
 import { TfiRulerAlt2 } from "react-icons/tfi";
 import { PiHouse } from "react-icons/pi";
@@ -15,28 +15,33 @@ import Image from "next/image";
   const services = [
     {
       icon: <Hammer className="h-8 w-8 text-gray-dark " />,
-      title: "Fabricación Artesanal",
-      description: "Cada pieza es única, creada por maestros carpinteros con técnicas tradicionales"
+      title: "Fabricación a Medida",
+      description: "Fabricamos muebles a medida con altos estándares de calidad y precisión."
     },
     {
       icon: <TfiRulerAlt2 className="h-8 w-8 text-gray-dark"/>,
       title: "Diseño Personalizado",
-      description: "Adaptamos cada mueble a tus espacios, gustos y necesidades específicas"
+      description: "Adaptamos cada mueble a tus espacios, gustos y necesidades específicas."
     },
+      {
+    icon: <Paintbrush className="h-8 w-8 text-gray-dark" />,
+    title: "Pintura y Acabados",
+    description: "Aplicación de barnices, pinturas y acabados de alta calidad para un resultado duradero."
+  },
     {
       icon: <Truck className="h-8 w-8 text-gray-dark" />,
       title: "Entrega e Instalación",
-      description: "Servicio completo desde la fabricación hasta la instalación en tu hogar"
+      description: "Servicio completo desde la fabricación hasta la instalación en tu hogar."
     },
     {
       icon: <RiToolsFill className="h-8 w-8 text-gray-dark" />,
       title: "Reparación y Mantenimiento",
-      description: "Servicio completo desde la fabricación hasta la instalación en tu hogar"
+      description: "Reparación y mantenimiento de muebles y trabajos en madera para prolongar su vida útil."
     },
     {
       icon: <PiHouse className="h-8 w-8 text-gray-dark" />,
       title: "Carpinería en General",
-      description: "Servicio completo desde la fabricación hasta la instalación en tu hogar"
+      description: "Servicios de carpintería para proyectos residenciales y comerciales."
     }
   ];
 
@@ -44,20 +49,20 @@ import Image from "next/image";
     {
       title: "Starbucks Mérida Altabrisa",
       category: "comerciales",
-      description: "Mesas y sillas que transforman cada comida en una experiencia especial",
+      description: "Mesas y sillas que transforman cada comida en una experiencia especial.",
       image: "/starbooksProject.webp"
     },
     {
-      title: "Salas de Estar",
-      category: "puertas",
-      description: "Sofás y muebles de sala diseñados para el confort y la elegancia",
-      image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      title: "Mesa de Centro",
+      category: "sillas_y_mesas",
+      description: "Mesa con madera de Encino, con soporte de herreria y cubierta de Granito de alta calidad.",
+      image: "/yaxnicMuebles/sillas_y_mesas/sm1-1.jpg"
     },
     {
-      title: "Dormitorios Únicos",
-      category: "recamaras",
+      title: "Cocina Moderna",
+      category: "cocinas",
       description: "Camas, cómodas y armarios que crean espacios de descanso perfectos",
-      image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      image: "/yaxnicMuebles/cocinas/cocina3-1.jpg"
     }
   ];
 
@@ -65,22 +70,22 @@ import Image from "next/image";
     {
       step: "01",
       title: "Consulta Inicial",
-      description: "Evaluamos tus necesidades, espacios y preferencias de estilo"
+      description: "Evaluamos tus necesidades, espacios y preferencias de estilo."
     },
     {
       step: "02", 
-      title: "Diseño y Cotización",
-      description: "Creamos propuestas visuales y presupuestos detallados"
+      title: "Cotización",
+      description: "Definimos materiales, medidas y costos para ofrecerte una cotización clara y precisa."
     },
     {
       step: "03",
-      title: "Producción Artesanal",
-      description: "Fabricamos cada pieza con técnicas tradicionales y modernas"
+      title: "Proceso de Fabricación",
+      description: "Fabricamos cada pieza con precisión, cuidando cada detalle y acabado."
     },
     {
       step: "04",
       title: "Entrega e Instalación",
-      description: "Llevamos y instalamos tus muebles con el máximo cuidado"
+      description: "Llevamos e instalamos tus muebles con cuidado y precisión."
     }
   ];
 
@@ -180,7 +185,7 @@ export default function Home() {
                 </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <CardContent className="p-6 bg-gray-dark">
-                  <h3 className="text-2xl font-display font-semibold mb-3 text-white">
+                  <h3 className="text-2xl font-title font-light mb-3 text-white">
                     {product.title}
                   </h3>
                   <p className="text-gray-light mb-4">
@@ -195,9 +200,9 @@ export default function Home() {
           <div className="text-center scroll-animate">
             <Link 
               href="/proyectos"
-              className="inline-flex hover:text-gray-light items-center gap-2 shadow-xl hover:bg-gray-dark rounded-lg text-gray-dark bg-white px-8 py-4 font-semibold transition-all duration-300 hover:transform hover:scale-105"
+              className="inline-flex font-title hover:text-gray-light items-center gap-2 shadow-xl hover:bg-gray-dark rounded-lg text-gray-dark bg-white px-8 py-4 font-semibold transition-all duration-300 hover:transform hover:scale-105"
             >
-              Nuestros proyectos
+              Nuestros Proyectos
               <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
@@ -219,10 +224,10 @@ export default function Home() {
             {processes.map((process, index) => (
               <Card key={process.step} className="text-center border-none bg-gray-medium rounded-lg shadow-lg scroll-animate" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardContent className="p-6">
-                  <div className="text-4xl font-display font-bold text-gray-light mb-4">
+                  <div className="text-4xl font-title font-light text-gray-light mb-4">
                     {process.step}
                   </div>
-                  <h3 className="text-xl font-display font-semibold mb-3 text-gray-light/60">
+                  <h3 className="text-2xl md:text-2xl font-title font-ligth mb-3 text-gray-light/60">
                     {process.title}
                   </h3>
                   <p className="text-gray-light/90 text-md">

@@ -5,6 +5,7 @@ import { Menu } from "lucide-react";
 import { Button } from "../components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Hamburger from 'hamburger-react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,12 +57,7 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="text-white md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <Menu className="h-6 w-6" />
-          </button>
+          <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} size={24} color="#FFFFFF" />
         </div>
 
         {/* Mobile Navigation */}

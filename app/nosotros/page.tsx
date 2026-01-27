@@ -18,73 +18,54 @@ export default function AboutUs() {
 
   const timeline = [
     {
-      year: "2009",
-      title: "Los Inicios",
-      description: "Fundamos Yaxnic con la visión de crear muebles únicos y personalizados"
-    },
-    {
-      year: "2012",
-      title: "Primera Expansión",
-      description: "Abrimos nuestro primer showroom y expandimos el equipo de artesanos"
-    },
-    {
-      year: "2016",
-      title: "Reconocimiento",
-      description: "Ganamos el premio a la mejor mueblería artesanal de la región"
-    },
-    {
-      year: "2020",
-      title: "Innovación Digital",
-      description: "Incorporamos tecnología 3D para visualización de proyectos"
-    },
-    {
-      year: "2024",
-      title: "Presente",
-      description: "Más de 200 clientes satisfechos y proyectos en 3 estados"
-    }
+  year: "2009",
+  title: "Los Inicios",
+  description: "Comenzamos ofreciendo trabajos de carpintería con dedicación y atención al detalle."
+},
+{
+  year: "2012",
+  title: "Crecimiento",
+  description: "Ampliamos nuestros servicios y empezamos a atender más proyectos residenciales."
+},
+{
+  year: "2016",
+  title: "Experiencia",
+  description: "Consolidamos nuestra forma de trabajo y la confianza de nuestros clientes."
+},
+{
+  year: "2020",
+  title: "Adaptación",
+  description: "Continuamos operando y ajustándonos a las nuevas necesidades de nuestros clientes."
+},
+{
+  year: new Date().getFullYear().toString(),
+  title: "Actualidad",
+  description: "Seguimos creando muebles a la medida con calidad y compromiso, desarrollando proyectos residenciales y comerciales."
+}
+
   ];
 
-  const team = [
-    {
-      name: "Miguel Yaxnic",
-      role: "Fundador y Maestro Carpintero",
-      description: "30 años de experiencia en carpintería tradicional y diseño de muebles",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-    },
-    {
-      name: "Carmen Rodríguez",
-      role: "Directora de Diseño",
-      description: "Especialista en interiorismo y tendencias contemporáneas",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-    },
-    {
-      name: "José Martín",
-      role: "Maestro Ebanista",
-      description: "Experto en acabados finos y técnicas de restauración",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-    }
-  ];
 
   const philosophy = [
     {
       icon: <TreePine className="h-8 w-8 text-gray-light" />,
       title: "Respeto por la Naturaleza",
-      description: "Utilizamos maderas de fuentes sostenibles y procesos ecoamigables"
+      description: "Utilizamos maderas de fuentes sostenibles y procesos ecoamigables."
     },
     {
       icon: <Hammer className="h-8 w-8 text-gray-light" />,
-      title: "Tradición Artesanal",
-      description: "Combinamos técnicas centenarias con herramientas modernas"
+      title: "Vocación de Servicio",
+      description: "Trabajamos para aportar valor real en cada espacio que creamos."
     },
     {
       icon: <Heart className="h-8 w-8 text-gray-light" />,
       title: "Pasión por el Detalle",
-      description: "Cada pieza recibe atención personalizada y acabados perfectos"
+      description: "Cada pieza recibe atención personalizada y acabados perfectos."
     },
     {
       icon: <Users className="h-8 w-8 text-gray-light" />,
       title: "Compromiso Familiar",
-      description: "Somos una empresa familiar que valora las relaciones duraderas"
+      description: "Somos una empresa familiar que valora las relaciones duraderas."
     }
   ];
 
@@ -95,10 +76,10 @@ export default function AboutUs() {
         {/* Hero Section */}
         <section className="py-20 bg-gray-dark">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-6xl font-title font-light mb-6 text-white scroll-animate">
+            <h1 className="text-4xl md:text-6xl font-title font-light mb-6 text-white">
               Nuestra Historia
             </h1>
-            <p className="text-xl text-gray-light max-w-3xl mx-auto scroll-animate">
+            <p className="text-xl text-gray-light max-w-3xl mx-auto  ">
               Una historia de pasión, tradición y compromiso con la excelencia en cada mueble que creamos.
             </p>
           </div>
@@ -131,13 +112,13 @@ export default function AboutUs() {
                     
                     <Card className={`ml-12 md:ml-0 ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'} bg-gray-light md:w-5/12 border-none rounded-sm shadow-lg`}>
                       <CardContent className="p-6">
-                        <div className="text-2xl font-display font-bold text-primary mb-2">
+                        <div className="text-2xl font-title font-light text-gray-dark mb-2">
                           {item.year}
                         </div>
-                        <h3 className="text-xl font-display font-semibold mb-2 text-foreground">
+                        <h3 className="text-xl font-display font-light mb-2 text-gray-dark">
                           {item.title}
                         </h3>
-                        <p className="text-muted-foreground">
+                        <p className="text-gray-medium">
                           {item.description}
                         </p>
                       </CardContent>

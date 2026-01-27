@@ -117,8 +117,8 @@ export default function Projects() {
       <section className="py-20 bg-gray-light shadow-lg">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 scroll-animate">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-gray-dark">
-              Lo que dicen nuestros clientes
+            <h2 className="text-4xl md:text-5xl font-title font-light mb-4 text-gray-dark">
+              Reseñas de Clientes
             </h2>
             <p className="text-xl text-gray-dark max-w-2xl mx-auto">
               La satisfacción de nuestros clientes es nuestra mayor recompensa

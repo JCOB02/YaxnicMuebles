@@ -93,7 +93,7 @@ export default function ContactSection() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm md:text-xl font-medium text-foreground mb-2">
+                      <label htmlFor="name" className="block text-sm md:text-xl font-title font-medium text-gray-dark mb-2">
                         Nombre completo
                       </label>
                       <Input
@@ -108,7 +108,7 @@ export default function ContactSection() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm md:text-xl font-medium text-foreground mb-2">
+                      <label htmlFor="email" className="block text-sm md:text-xl font-medium font-title text-gray-dark mb-2">
                         Correo electrónico
                       </label>
                       <Input
@@ -124,7 +124,7 @@ export default function ContactSection() {
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm md:text-xl font-medium text-foreground mb-2">
+                    <label htmlFor="message" className="block text-sm md:text-xl font-medium font-title text-gray-dark mb-2">
                       Mensaje
                     </label>
                     <textarea
@@ -149,28 +149,25 @@ export default function ContactSection() {
               </CardContent>
             </Card>
           </div>
-
-
-<div className="hidden lg:col-span-1  lg:flex overflow-hidden">
-  <div className="w-full overflow-hidden rounded-lg shadow-md">
-    <Carousel className="relative w-full " opts={{ loop: true }} 
-    plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]}>
-      <CarouselContent className="">
-        {images.map((image, index) => (
-          <CarouselItem key={index} className=" overflow-hidden">
-            <Image
-
-  src={`${image}`}
-  width={350}
-  height={480}
-  alt={`Slide ${index + 1}`}
-  className="w-full lg:h-[500px] object-fill rounded-lg block"
-/>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      
-    </Carousel>
+          <div className=" lg:col-span-1  lg:flex overflow-hidden">
+            <div className="w-full overflow-hidden rounded-lg shadow-md">
+              <Carousel className="relative w-full " opts={{ loop: true }} 
+              plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]}>
+                <CarouselContent className="">
+                  {images.map((image, index) => (
+                    <CarouselItem key={index} className=" overflow-hidden">
+                      <Image
+                        src={`${image}`}
+                        width={350}
+                        height={480}
+                        alt={`Slide ${index + 1}`}
+                        className="w-full h-[500px] object-fill rounded-lg block"
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                
+              </Carousel>
             </div>
           </div>
         </div>

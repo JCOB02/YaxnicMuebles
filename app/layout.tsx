@@ -5,6 +5,7 @@ import './globals.css'; // Ensure global styles are imported
 import { Toaster } from "./components/ui/toaster";
 import { Viewport } from "next";
 
+
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',

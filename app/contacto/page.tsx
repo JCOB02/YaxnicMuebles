@@ -7,6 +7,7 @@ import ScrollToTop from "../components/ScrollToTop";
 import { Card, CardContent } from "../components/ui/card";
 import {FaInstagram, FaWhatsapp} from "react-icons/fa";
 import { Clock, Phone, Mail, MapPin, MessageCircle, Calendar } from "lucide-react";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "../components/ui/accordion";
 
 export default function Contact() {
   const contactMethods = [
@@ -30,8 +31,8 @@ export default function Contact() {
       icon: <FaWhatsapp className="h-8 w-8 text-gray-300" />,
       title: "WhatsApp",
       description: "Chatea con nosotros para respuestas rápidas",
-      detail: "+52 55 9876 5432",
-      action: "https://wa.me/525598765432",
+      detail: "+52 999 347 4481",
+      action: "https://wa.me/529993474481?text=Hola,%20tengo%20un%20proyecto%20en%20mente%20y%20me%20gustar%C3%ADa%20saber%20si%20me%20pueden%20ayudar.%20%C2%BFMe%20podr%C3%ADan%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F",
       external: true
     }
   ];
@@ -49,27 +50,11 @@ export default function Contact() {
     },
     {
       icon: <Clock className="h-6 w-6 text-primary" />,
-      title: "Cotización 24h",
-      description: "Presupuesto detallado en máximo 24 horas"
+      title: "Cotización 48h",
+      description: "Presupuesto detallado en máximo 48 horas"
     }
   ];
 
-  const locations = [
-    {
-      name: "Showroom Principal",
-      address: "Av. Artesanos #123, Col. Industrial",
-      city: "Ciudad de México, CDMX",
-      hours: "Lun - Vie: 9:00 AM - 6:00 PM | Sáb: 9:00 AM - 2:00 PM",
-      description: "Nuestro showroom principal con exposición completa de productos"
-    },
-    {
-      name: "Taller de Producción",
-      address: "Calle Manufactura #456, Zona Industrial",
-      city: "Tlalnepantla, Estado de México",
-      hours: "Lun - Vie: 8:00 AM - 5:00 PM",
-      description: "Centro de producción donde puedes ver el proceso de fabricación"
-    }
-  ];
 
   const faqs = [
     {
@@ -82,7 +67,7 @@ export default function Contact() {
     },
     {
       question: "¿Realizan entregas a domicilio?",
-      answer: "Ofrecemos entrega e instalación gratuita en CDMX y área metropolitana. Para otros estados, consulta nuestras tarifas especiales."
+      answer: "Ofrecemos entrega e instalación gratuita en Mérida y alrededores. Para entregas fuera Mérida, se aplicará un cargo adicional por concepto de flete."
     },
     {
       question: "¿Puedo personalizar completamente el diseño?",
@@ -117,7 +102,7 @@ export default function Contact() {
         <section className="py-20 bg-gray-light">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 scroll-animate">
-              <h2 className="text-4xl md:text-6xl font-title font-light mb-4 text-foreground">
+              <h2 className="text-4xl md:text-5xl font-title font-light mb-4 text-foreground">
                 Múltiples Formas de Contacto
               </h2>
               <p className="text-xl text-gray-dark max-w-2xl mx-auto">
@@ -125,17 +110,17 @@ export default function Contact() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
               {contactMethods.map((method, index) => (
-                <Card key={method.title} className="bg-gray-dark text-center border-none rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-400 cursor-pointer scroll-animate" style={{ animationDelay: `${index * 0.2}s` }}>
+                <Card key={method.title} className="bg-gray-dark text-center border-none rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-400 scroll-animate" style={{ animationDelay: `${index * 0.2}s` }}>
                   <CardContent className="p-8 flex flex-col h-full">
                     <div className="flex justify-center mb-6">
                       {method.icon}
                     </div>
-                    <h3 className="text-2xl font-display font-semibold mb-3 text-white">
+                    <h3 className="text-2xl font-title font-light mb-3 text-white">
                       {method.title}
                     </h3>
-                    <p className="text-gray-light mb-4">
+                    <p className="text-gray-light font-title mb-4">
                       {method.description}
                     </p>
                     <p className="text-gray-light font-semibold mb-4">
@@ -145,7 +130,7 @@ export default function Contact() {
                       href={method.action}
                       target={method.external ? "_blank" : "_self"}
                       rel={method.external ? "noopener noreferrer" : ""}
-                      className="inline-block mt-auto bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-lg font-medium transition-colors"
+                      className="inline-block mt-auto bg-primary hover:bg-gray-light hover:text-gray-dark text-primary-foreground px-6 py-2 rounded-lg font-medium transition-colors"
                     >
                       Contactar
                     </a>
@@ -157,17 +142,17 @@ export default function Contact() {
             {/* Services */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <Card key={service.title} className="border-none shadow-md scroll-animate" style={{ animationDelay: `${index * 0.1}s` }}>
+                <Card key={service.title} className="border-none rounded-lg shadow-md scroll-animate" style={{ animationDelay: `${index * 0.1}s` }}>
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0">
                         {service.icon}
                       </div>
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">
+                        <h4 className="md:text-lg font-title text-gray-dark mb-2">
                           {service.title}
                         </h4>
-                        <p className="text-muted-foreground text-sm">
+                        <p className="text-gray-dark text-sm">
                           {service.description}
                         </p>
                       </div>
@@ -182,29 +167,49 @@ export default function Contact() {
 
 
         {/* FAQ Section */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-gradient-to-t from-black/90 to-gray-dark">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 scroll-animate">
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-foreground">
+              <h2 className="text-4xl md:text-5xl font-title font-light mb-4 text-gray-light">
                 Preguntas Frecuentes
               </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-xl font-light text-gray-light max-w-2xl mx-auto">
                 Resolvemos las dudas más comunes de nuestros clientes
               </p>
             </div>
 
             <div className="max-w-4xl mx-auto space-y-6">
               {faqs.map((faq, index) => (
-                <Card key={faq.question} className="border-none shadow-lg scroll-animate" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-display font-semibold mb-3 text-foreground">
+                // <Card key={faq.question} className="border-none shadow-lg scroll-animate" style={{ animationDelay: `${index * 0.1}s` }}>
+                //   <CardContent className="p-6">
+                //     <h3 className="text-lg font-title font-semibold mb-3 text-foreground">
+                //       {faq.question}
+                //     </h3>
+                //     <p className="text-gray-medium">
+                //       {faq.answer}
+                //     </p>
+                //   </CardContent>
+                // </Card>
+                <Accordion
+                  type="single"
+                  collapsible
+                  className="w-full text-gray-light"
+                  defaultValue="item-1"
+                  key={index}
+                >
+                  <AccordionItem value={`item-${index + 1}`} key={index} className="border-t-gray-light ">
+                    <AccordionTrigger>
+                      <h3 className="text-lg md:text-2xl font-title font-light mb-3 ">
                       {faq.question}
-                    </h3>
-                    <p className="text-muted-foreground">
-                      {faq.answer}
-                    </p>
-                  </CardContent>
-                </Card>
+                      </h3>
+                    </AccordionTrigger>
+                    <AccordionContent className="flex flex-col gap-4 text-gray-light">
+                      <p className="font-title font-light text-md md:text-lg">
+                        {faq.answer}
+                      </p>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               ))}
             </div>
           </div>
