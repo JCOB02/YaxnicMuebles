@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from "react";
-import { Menu } from "lucide-react";
 import { Button } from "../components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -57,7 +56,15 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} size={24} color="#FFFFFF" />
+
+          <div className="md:hidden">
+            <Hamburger
+              toggled={isMenuOpen}
+              toggle={setIsMenuOpen}
+              size={24}
+              color="#FFFFFF"
+            />
+          </div>
         </div>
 
         {/* Mobile Navigation */}
