@@ -87,12 +87,12 @@ const Footer = () => {
             © {currentYear} Yaxnic Muebles. Todos los derechos reservados.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-primary-foreground text-sm transition-colors duration-200">
+            <Link href="/aviso_de_privacidad" className="text-gray-400 hover:text-primary-foreground text-sm transition-colors duration-200">
               Aviso de Privacidad
-            </a>
-            <a href="#" className="text-gray-400 over:text-primary-foreground text-sm transition-colors duration-200">
+            </Link>
+            <Link href="/terminos_y_condiciones" className="text-gray-400 over:text-primary-foreground text-sm transition-colors duration-200">
               Términos y Condiciones
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -27,10 +27,10 @@ export default function ProyectosClient({
       <ScrollToTop />
       <AnimateOnScroll />
 
-      <section className="px-4 md:px-10 py-10">
-       <Grid container spacing={3} className="scroll-animate">
+      <section className="bg-gradient-to-t from-gray-medium/20 to-gray-light px-4 md:px-10 py-10">
+       <Grid container spacing={7} className="scroll-animate">
   {proyectos.map((p) => (
-    <Grid size={{ xs: 12, sm: 6, md: 4 }} key={p.id}>
+    <Grid size={{ xs: 12, sm: 6, md: 6 }} key={p.id}>
       <div
         onClick={() => setProyectoActivo(p)}
         className="cursor-pointer group"

@@ -32,21 +32,16 @@ const ProjectsSection = () => {
       description: "Sillas y mesas con diseño funcional y acabados de alta calidad.",
       image: "yaxnicMuebles/sillas_y_mesas/sm1-2.jpg",
     },
-    {
-      name: "Recámaras",
-      description: "Recámaras completas con muebles de madera que combinan confort y diseño.",
-      image: "yaxnicMuebles/recamaras/IMG_20201112_082957.jpg",
-    },
 
     {
       name: "Comerciales",
       description: "Muebles para negocios pensados para proyectar una imagen profesional y atractiva.",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: "yaxnicMuebles/comerciales/comercial1-1.webp",
     },  
     {
       name: "Restauraciones",
       description: "Restauración de muebles conservando su diseño y funcionalidad original.",
-      image: "https://plus.unsplash.com/premium_photo-1681816189276-69731364c133?q=80&w=2091&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "/yaxnicMuebles/restauraciones/restauracion2-2.jpg",
     }
   ];
 

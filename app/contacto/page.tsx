@@ -21,7 +21,7 @@ export default function Contact() {
     },
     {
       icon: <Mail className="h-8 w-8 text-gray-300" />,
-      title: "Escríbenos",
+      title: "Correo",
       description: "Envíanos tu proyecto y te contactaremos pronto",
       detail: "yaxnicmuebles@gmail.com",
       action: "#contacto"

@@ -54,7 +54,7 @@ import Image from "next/image";
     },
     {
       title: "Mesa de Centro",
-      category: "sillas_y_mesas",
+      category: "sillas-y-mesas",
       description: "Mesa con madera de Encino, con soporte de herreria y cubierta de Granito de alta calidad.",
       image: "/yaxnicMuebles/sillas_y_mesas/sm1-1.jpg"
     },
