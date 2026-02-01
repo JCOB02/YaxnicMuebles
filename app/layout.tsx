@@ -28,7 +28,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "YaxnicMuebles",
+  title: "Yaxnic Muebles",
   description:
     "Muebles a medida, restauración y trabajos en madera en Mérida. Atención personalizada. Cotiza por WhatsApp.",
   keywords: [
