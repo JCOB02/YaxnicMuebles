@@ -58,7 +58,7 @@ export default function ProyectosClient({
           />
 
           {/* TEXTO */}
-          <div
+          {/* <div
             className="
               absolute bottom-0 left-0 right-0 p-4
               text-white
@@ -70,7 +70,7 @@ export default function ProyectosClient({
             <h3 className="text-lg md:text-xl font-medium">
               {p.nombre}
             </h3>
-          </div>
+          </div> */}
         </div>
       </div>
     </Grid>
