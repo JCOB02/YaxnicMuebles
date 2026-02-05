@@ -37,6 +37,9 @@ export const metadata: Metadata = {
     "restauración de muebles",
     "carpintero profesional",
   ],
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
