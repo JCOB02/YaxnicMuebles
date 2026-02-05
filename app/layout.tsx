@@ -30,15 +30,20 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Yaxnic Muebles",
   description:
-    "Muebles a medida, restauración y trabajos en madera en Mérida. Atención personalizada. Cotiza por WhatsApp.",
+    "Fabricamos muebles de madera a medida en Mérida. Carpintería profesional, diseño personalizado y restauración de muebles. Cotiza hoy por WhatsApp.",
   keywords: [
-    "carpintería en Mérida",
+    " ",
     "muebles a medida",
     "restauración de muebles",
     "carpintero profesional",
   ],
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 

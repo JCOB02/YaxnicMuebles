@@ -49,7 +49,7 @@ import Image from "next/image";
     {
       title: "Starbucks Mérida Altabrisa",
       category: "comerciales",
-      description: "Mesas y sillas que transforman cada comida en una experiencia especial.",
+      description: "Proyecto comercial para Starbucks con mobiliario funcional y alineado a su marca.",
       image: "/starbooksProject.webp"
     },
     {
@@ -61,7 +61,7 @@ import Image from "next/image";
     {
       title: "Cocina Moderna",
       category: "cocinas",
-      description: "Camas, cómodas y armarios que crean espacios de descanso perfectos",
+      description: "Cocina moderna diseñada a medida, con acabados de alta calidad y distribución funcional.",
       image: "/yaxnicMuebles/cocinas/cocina3-1.jpg"
     }
   ];
