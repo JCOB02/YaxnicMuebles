@@ -86,8 +86,8 @@ const Header = () => {
               ))}
               <Link href="https://wa.me/529993474481?text=Hola,%20tengo%20un%20proyecto%20en%20mente%20y%20me%20gustar%C3%ADa%20saber%20si%20me%20pueden%20ayudar.%20%C2%BFMe%20podr%C3%ADan%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" onClick={() => setIsMenuOpen(false)}>
                 
-                <Button className="font-title w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-4">
-                    Cotiza tu proyecto
+                <Button className="font-title w-full bg-gray-dark hover:bg-gray-light hover:text-gray-dark text-gray-light mt-4">
+                    <SiWhatsapp></SiWhatsapp>  Cotiza tu proyecto
                 </Button>
               </Link>
             </div>

@@ -16,7 +16,7 @@ import Image from "next/image";
     {
       icon: <Hammer className="h-8 w-8 text-gray-dark " />,
       title: "Fabricación a Medida",
-      description: "Fabricamos muebles a medida con altos estándares de calidad y precisión."
+      description: "Carpintería a medida con muebles fabricados con calidad, precisión y detalle."
     },
     {
       icon: <TfiRulerAlt2 className="h-8 w-8 text-gray-dark"/>,
@@ -116,45 +116,30 @@ export default function Home() {
 
           <div className="space-y-8">
             {/* Primera fila: en móvil columna, en md+ fila con 3 elementos */}
-            <div className="flex flex-col items-center gap-8 md:flex-row md:justify-center md:gap-8">
-              {services.slice(0, 3).map((service, index) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => (
                 <Card
                   key={service.title}
-                  className="text-center shadow-lg border-none rounded-lg bg-gray-light hover:scale-105 max-w-md scroll-animate"
+                  className="text-center shadow-lg border-none rounded-lg bg-gray-light hover:scale-105 h-full scroll-animate"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <CardContent className="p-8">
-                    <div className="flex justify-center mb-4">{service.icon}</div>
+                  <CardContent className="p-8 flex flex-col items-center h-full">
+                    <div className="flex justify-center mb-4">
+                      {service.icon}
+                    </div>
+
                     <h3 className="text-xl font-display font-semibold mb-4 text-gray-dark">
                       {service.title}
                     </h3>
-                    <p className="text-gray-medium">{service.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
 
-            {/* Segunda fila: en móvil columna, en md+ fila con 2 elementos centrados */}
-            <div className="flex flex-col items-center gap-8 md:flex-row md:justify-center md:gap-8">
-              {services.slice(3).map((service, index) => (
-                <Card
-                  key={service.title}
-                  className="text-center border-none rounded-lg shadow-lg hover:scale-105 max-w-md scroll-animate"
-                  style={{ animationDelay: `${(index + 3) * 0.2}s` }}
-                >
-                  <CardContent className="p-8">
-                    <div className="flex justify-center mb-4">{service.icon}</div>
-                    <h3 className="text-xl font-display font-semibold mb-4 text-foreground">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground">{service.description}</p>
+                    <p className="text-gray-medium min-h-[3.5rem]">
+                      {service.description}
+                    </p>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </div>
-
-
         </div>
       </section>
 
@@ -171,31 +156,43 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {featuredProyects.map((product, index) => (
-              <Link href={`/proyectos/${product.category}`} key={product.title}>
-              <Card key={product.title} className="overflow-hidden border-none rounded-lg shadow-lg scroll-animate hover:transform hover:scale-105" style={{ animationDelay: `${index * 0.2}s` }}>
-                <div className="relative w-full h-48">
-                  <Image
-                    src={product.image}
-                    alt={product.title}
-                    fill
-                    className="object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <CardContent className="p-6 bg-gray-dark">
-                  <h3 className="text-2xl font-title font-light mb-3 text-white">
-                    {product.title}
-                  </h3>
-                  <p className="text-gray-light mb-4">
-                    {product.description}
-                  </p>
-                </CardContent>
-              </Card>
-              </Link>
-            ))}
-          </div>
+  {featuredProyects.map((product, index) => (
+    <Link
+      href={`/proyectos/${product.category}`}
+      key={product.title}
+      className="h-full"
+    >
+      <Card
+        className="h-full flex flex-col overflow-hidden border-none rounded-lg shadow-lg scroll-animate hover:scale-105 transition-transform"
+        style={{ animationDelay: `${index * 0.2}s` }}
+      >
+        {/* Imagen */}
+        <div className="relative w-full h-48">
+          <Image
+            src={product.image}
+            alt={product.title}
+            fill
+            className="object-cover"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        </div>
+
+        {/* Contenido */}
+        <CardContent className="p-6 bg-gray-dark flex flex-col flex-1">
+          <h3 className="text-2xl font-title font-light mb-3 text-gray-light">
+            {product.title}
+          </h3>
+
+          <p className="font-light text-gray-light mb-4 min-h-[3rem]">
+            {product.description}
+          </p>
+        </CardContent>
+      </Card>
+    </Link>
+  ))}
+</div>
+
 
           <div className="text-center scroll-animate">
             <Link 
