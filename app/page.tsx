@@ -47,7 +47,7 @@ import Image from "next/image";
 
   const featuredProyects = [
     {
-      title: "Starbucks Mérida Altabrisa",
+      title: "Starbucks Chetumal",
       category: "comerciales",
       description: "Proyecto comercial para Starbucks con mobiliario funcional y alineado a su marca.",
       image: "/starbooksProject.webp"
