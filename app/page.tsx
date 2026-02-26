@@ -59,7 +59,7 @@ import Image from "next/image";
       image: "/yaxnicMuebles/sillas_y_mesas/sm1-1.jpg"
     },
     {
-      title: "Cocina Moderna",
+      title: "Cocina Integral",
       category: "cocinas",
       description: "Cocina moderna diseñada a medida, con acabados de alta calidad y distribución funcional.",
       image: "/yaxnicMuebles/cocinas/cocina3-1.jpg"
